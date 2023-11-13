@@ -1,9 +1,22 @@
+import { Component } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
 
-function App() {
+export default class App extends Component {
+  constructor(props){
+    super(props) 
+    this.state = ({
+    darkMode: false,
+    alert: null
+  });
+}
+ render(){
   return (
-    <h1>Hello World</h1>
+    <>
+    <Navbar title="textUtils" about="About Text Utilities" darkMode={this.state.darkMode}/>
+    </>
   );
 }
+}
 
-export default App;
+
