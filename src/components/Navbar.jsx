@@ -9,7 +9,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <>
-                <nav className="navbar navbar-expand-lg bg-light">
+                <nav className={`navbar navbar-expand-lg navbar-${this.props.darkMode ? 'dark' : 'light'} bg-${this.props.darkMode ? 'dark': 'light'}`}>
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">{this.props.title}</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +28,10 @@ export default class Navbar extends Component {
                                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                                 </li>
                             </ul>
-                            {/* <div className={`form-check form-switch ${this.props.darkMode ? 'text-light' : 'text-dark'}`}>
-                                <input className="form-check-input mx-2" type="checkbox" role="switch" id="flexSwitchCheckChecked" onClick={props.toggleMode} />
+                            <div className={`form-check form-switch ${this.props.darkMode ? 'text-light' : 'text-dark'}`}>
+                                <input className="form-check-input mx-2" type="checkbox" role="switch" id="flexSwitchCheckChecked" onClick={this.props.toggleMode} />
                                 <label className="form-check-label mx-2" htmlFor="flexSwitchCheckChecked">{`${this.props.darkMode ? 'Disable' : 'Enable'} Dark Mode`}</label>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </nav>
