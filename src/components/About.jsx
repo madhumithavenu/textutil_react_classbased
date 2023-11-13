@@ -17,17 +17,21 @@ export default class About extends Component {
     toggleStyle() {
         if (this.state.myStyle.color === "white") {
             this.setState({
-                color: 'black',
-                backgroundColor: 'white',
-                btnText: "Enable dark Mode"
+                myStyle: {
+                    color: 'black',
+                    backgroundColor: 'white',
+                    btnText: "Enable dark Mode"
+                }
             });
 
         }
         else {
             this.setState({
+                myStyle: {
                 color: 'white',
                 backgroundColor: 'black',
                 btnText: "Enable Light Mode"
+                }
             });
 
         }
