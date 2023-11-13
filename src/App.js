@@ -16,7 +16,7 @@ export default class App extends Component {
     this.showAlert = this.showAlert.bind(this);
   }
 
-  darkMode() {
+  componentDidMount() {
     if (this.state.darkMode) {
       document.body.style.backgroundColor = '#343a40';
       document.body.style.color = 'white';
@@ -24,6 +24,7 @@ export default class App extends Component {
       document.body.style.backgroundColor = 'white';
       document.body.style.color = '#343a40';
     }
+
   }
 
   showAlert(message, type) {
@@ -68,12 +69,12 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Navbar title="textUtils" about="About Text Utilities" darkMode={this.darkMode} toggleMode={this.toggleMode} />
-        <Alert />
+        <Navbar title="textUtils" about="About Text Utilities" darkMode={this.state.darkMode} toggleMode={this.toggleMode} />
+        <Alert alert={this.state.alert}/>
         <div className='container my-3'>
           <TextForm heading="Enter the text to analyze" showAlert={this.showAlert} />
         </div>
-        <About />
+        {/* <About /> */}
       </>
     );
   }
